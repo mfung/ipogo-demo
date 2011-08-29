@@ -2,8 +2,6 @@ class Poi
   include ActiveModel::Validations
   include ActiveModel::Conversion
   extend ActiveModel::Naming
-
-  acts_as_gmappable 
   
   attr_accessor :name, :latitude, :longitude, :gmaps, :address, :zip, :city, :country
  
