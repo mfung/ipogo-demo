@@ -1,3 +1,5 @@
+<h1><%= @location.address %></h1>
+
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
 
 <h3>Nearby locations</h3>
@@ -6,3 +8,13 @@
   <li><%= link_to location.address, location %> (<%= location.distance.round(2) %> miles)</li>
 <% end %>
 </ul>
+
+<h3>Nearby locations from simplegeo</h3>
+<ul>
+<% for place in @places[:features] %>
+  <li><%= place[:properties][:name].to_s +  ' | Address: ' + place[:properties][:address].to_s + '; ' + place[:properties][:city].to_s %></li>
+<% end %>
+</ul>
+<p>
+  <%= link_to "View All", locations_path %>
+</p>
