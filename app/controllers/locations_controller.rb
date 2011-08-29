@@ -12,7 +12,11 @@ class LocationsController < ApplicationController
     options = {'q'=>'high', 'category'=>'school', 'radius'=>10}
     @places = SimpleGeo::Client.get_places(@location.latitude, @location.longitude, options)
     
+    @poi = []
     
+    @places.each do |place| 
+      @poi << Poi.new(:name => place[:features][:properties][:name], :latitude => place[:geometry][:coordinates][0], :longitude => place[:geometry][:coordinates][1], :address => place[:features][:properties][:address],:zip => place[:features][:properties][:postcode],:city => place[:features][:properties][:city],:country => place[:features][:properties][:country])
+    end
   end
 
   def new
