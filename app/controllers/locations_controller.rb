@@ -11,6 +11,8 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
     options = {'q'=>'high', 'category'=>'school', 'radius'=>10}
     @places = SimpleGeo::Client.get_places(@location.latitude, @location.longitude, options)
+    
+    
   end
 
   def new
