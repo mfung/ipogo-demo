@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'geocoder'
 gem 'simplegeo'
 gem 'gmaps4rails'
+gem 'cancan'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -47,3 +48,4 @@ group :development, :test do
   gem "nifty-generators"
 end
 gem "mocha", :group => :test
+gem "bcrypt-ruby", :require => "bcrypt"

@@ -15,6 +15,9 @@
   <li><%= place[:properties][:name].to_s +  ' | Address: ' + place[:properties][:address].to_s + '; ' + place[:properties][:city].to_s %></li>
 <% end %>
 </ul>
+
+<%= gmaps4rails(@pois) %>
+
 <p>
   <%= link_to "View All", locations_path %>
 </p>
