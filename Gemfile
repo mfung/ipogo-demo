@@ -11,6 +11,7 @@ gem 'geocoder'
 gem 'simplegeo'
 gem 'gmaps4rails'
 gem 'cancan'
+gem 'acts_as_rateable'
 
 # Gems used only for assets and not required
 # in production environments by default.
